@@ -63,4 +63,19 @@ const addBackground = (root) => {
   whiteBox.style.width = `${GAME_WIDTH}px`;
   whiteBox.style.background = '#fff';
   root.append(whiteBox);
+
+  const gameOver=document.createElement('img');
+  gameOver.src='images/gameover.jpg';
+  gameOver.style.display='none';
+  whiteBox.appendChild(gameOver);
+
+  const btn=document.createElement('img');
+  btn.src='images/replay.png';
+  btn.style.display='none';
+  whiteBox.appendChild(btn);
 };
+
+function reload(){
+  gameOver.style.display='block';
+  btn.style.display='block';
+}

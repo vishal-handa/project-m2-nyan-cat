@@ -45,7 +45,7 @@ class Engine {
     this.enemies = this.enemies.filter((enemy) => {
       return !enemy.destroyed;
     });
-
+    
     // We need to perform the addition of enemies until we have enough enemies.
     while (this.enemies.length < MAX_ENEMIES) {
       // We find the next available spot and, using this spot, we create an enemy.
@@ -53,12 +53,14 @@ class Engine {
       const spot = nextEnemySpot(this.enemies);
       this.enemies.push(new Enemy(this.root, spot));
     }
-
+    //console.log(this.enemies);
     // We check if the player is dead. If he is, we alert the user
     // and return from the method (Why is the return statement important?)
     if (this.isPlayerDead()) {
       window.alert('Game over');
+      //reload;
       return;
+      //gameOver.style.display=block;
     }
 
     // If the player is not dead, then we put a setTimeout to run the gameLoop in 20 milliseconds
@@ -68,6 +70,15 @@ class Engine {
   // This method is not implemented correctly, which is why
   // the burger never dies. In your exercises you will fix this method.
   isPlayerDead = () => {
-    return false;
+    let result=false;
+    this.enemies.forEach((enemy)=>{
+      if(this.player.x===enemy.x &&
+        enemy.y-(GAME_HEIGHT-PLAYER_HEIGHT-150)>0){
+        result=true;
+        console.log(enemy.y);
+      }
+    });
+      return result;
   };
+
 }
