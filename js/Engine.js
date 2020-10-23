@@ -90,7 +90,7 @@ class Engine {
     this.enemies.forEach((enemy)=>{
       if(this.player.x===enemy.x &&
         enemy.y-(GAME_HEIGHT-PLAYER_HEIGHT-150)>0){
-        result=true;
+        
         //console.log(enemy.y);
       }
     });
