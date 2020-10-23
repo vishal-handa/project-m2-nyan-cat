@@ -66,6 +66,7 @@ class Engine {
       // We add this enemy to the enemies array
       const spot = nextEnemySpot(this.enemies);
       this.enemies.push(new Enemy(this.root, spot));
+      console.log(this.enemies);
     }
     //console.log(this.enemies);
     // We check if the player is dead. If he is, we alert the user
@@ -90,8 +91,8 @@ class Engine {
     this.enemies.forEach((enemy)=>{
       if(this.player.x===enemy.x &&
         enemy.y-(GAME_HEIGHT-PLAYER_HEIGHT-150)>0){
-        
-        //console.log(enemy.y);
+        //result=true;
+        //console.log(drops.name);
       }
     });
       return result;

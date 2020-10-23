@@ -18,6 +18,7 @@ class Enemy {
     // - We need to keep track of the enemy spot so that we don't place two enemies in the same spot.
     this.root = theRoot;
     this.spot = enemySpot;
+    //this.enemyname = enemyName;
 
     // The x position of the enemy is determined by its width and its spot. We need this information for the lifetime
     // of the instance, so we make it a property of the instance. (Why is this information needed for the lifetime of the instance?)
@@ -36,7 +37,10 @@ class Enemy {
     this.domElement = document.createElement('img');
 
     // We give it a src attribute to specify which image to display.
-    this.domElement.src = './images/cat1.png';
+    let drops=kittyhaus[Math.floor(Math.random() * kittyhaus.length)];
+    this.domElement.src = drops.src;
+    this.domElement.type = drops.name;
+    //console.log( this.domElement.type);
     // We modify the CSS style of the DOM node.
     this.domElement.style.position = 'absolute';
     this.domElement.style.left = `${this.x}px`;
