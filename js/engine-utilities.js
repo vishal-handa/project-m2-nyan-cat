@@ -75,7 +75,6 @@ const addBackground = (root) => {
   whiteBox.appendChild(btn);
 };
 
-function reload(){
-  gameOver.style.display='block';
-  btn.style.display='block';
+function playAgain(){
+  window.location.reload();
 }
