@@ -17,6 +17,7 @@ class Engine {
     // We add the background image to the game
     addBackground(this.root);
   }
+  
 
   // The gameLoop will run every few milliseconds. It does several things
   //  - Updates the enemy positions
@@ -58,8 +59,7 @@ class Engine {
       replay.addEventListener('click', playAgain);
     }
     
-    
-
+  
     // We need to perform the addition of enemies until we have enough enemies.
     while (this.enemies.length < MAX_ENEMIES) {
       // We find the next available spot and, using this spot, we create an enemy.
