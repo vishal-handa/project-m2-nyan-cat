@@ -16,6 +16,9 @@ class Engine {
     this.enemies = [];
     // We add the background image to the game
     addBackground(this.root);
+    this.life=3;
+    //let counter=0;
+
   }
   
 
@@ -65,17 +68,22 @@ class Engine {
       // We find the next available spot and, using this spot, we create an enemy.
       // We add this enemy to the enemies array
       const spot = nextEnemySpot(this.enemies);
-      this.enemies.push(new Enemy(this.root, spot));
-      console.log(this.enemies);
+      let drops=kittyhaus[Math.floor(Math.random() * kittyhaus.length)];
+      //console.log(drops.name);
+      let name=drops.name;
+      let source=drops.src;
+      this.enemies.push(new Enemy(this.root, spot, name, source));
+      //console.log(this.enemies);
+      
     }
+
+    //set the name property
+
     //console.log(this.enemies);
     // We check if the player is dead. If he is, we alert the user
     // and return from the method (Why is the return statement important?)
-    if (this.isPlayerDead()) {
-      //window.alert('Game over');
-      //reload;
+    if (this.isPlayerDead() && this.life <= 0) {
       gameover();
-
       return;
       //gameOver.style.display=block;
     }
@@ -87,15 +95,20 @@ class Engine {
   // This method is not implemented correctly, which is why
   // the burger never dies. In your exercises you will fix this method.
   isPlayerDead = () => {
-    let result=false;
-    this.enemies.forEach((enemy)=>{
-      if(this.player.x===enemy.x &&
-        enemy.y-(GAME_HEIGHT-PLAYER_HEIGHT-150)>0){
-        //result=true;
-        //console.log(drops.name);
-      }
+    const enemy = this.enemies.find((enemy)=>{
+      return this.player.x===enemy.x && (enemy.y +PLAYER_HEIGHT>= this.player.y)
     });
-      return result;
+    if(enemy){
+      if(enemy.name === 'cat'){
+        this.life++;
+        console.log(this.life);
+      } else if (enemy.name === 'centaur'){
+        this.life -=10;
+      }
+      enemy.update();
+      console.log(enemy, this.life);
+    }
+    return enemy;
   };
 
   

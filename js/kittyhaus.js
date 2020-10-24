@@ -16,3 +16,4 @@ const kittyhaus=[
         src:"images/centaur.png"
     }
 ];
+

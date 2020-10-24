@@ -9,7 +9,7 @@ class Enemy {
   // Since the constructor takes 2 parameters
   // and the 2 parameters provide important information, we must supply 2 arguments to "new" every time we
   // create an instance of this class.
-  constructor(theRoot, enemySpot, enemyName) {
+  constructor(theRoot, enemySpot, name, source) {
     // When we create an Enemy instance, for example, new Enemy(someRoot, 3)
     // A new object is created and the constructor of the Enemy class is called. The context (the \`this\` keyword) is going
     // to be the new object. In these lines of code we see how to add 2 properties to this object: spot, root and gameHeight.
@@ -18,7 +18,10 @@ class Enemy {
     // - We need to keep track of the enemy spot so that we don't place two enemies in the same spot.
     this.root = theRoot;
     this.spot = enemySpot;
-    this.enemyname = enemyName;
+
+    this.name=name;
+    this.source=source;
+    //this.enemyname = enemyName;
     
 
     // The x position of the enemy is determined by its width and its spot. We need this information for the lifetime
@@ -38,10 +41,7 @@ class Enemy {
     this.domElement = document.createElement('img');
 
     // We give it a src attribute to specify which image to display.
-    let drops=kittyhaus[Math.floor(Math.random() * kittyhaus.length)];
-    this.domElement.src = drops.src;
-    enemyName = drops.name;
-    //console.log( this.domElement.type);
+    this.domElement.src = this.source;
     // We modify the CSS style of the DOM node.
     this.domElement.style.position = 'absolute';
     this.domElement.style.left = `${this.x}px`;
@@ -69,10 +69,13 @@ class Enemy {
     // If the y position of the DOM element is greater than the GAME_HEIGHT then the enemy is at the bottom
     // of the screen and should be removed. We remove the DOM element from the root DOM element and we set
     // the destroyed property to indicate that the enemy should no longer be in play
-    if (this.y > GAME_HEIGHT) {
+    if (this.y > GAME_HEIGHT || !timeDiff) {
       this.root.removeChild(this.domElement);
-
       this.destroyed = true;
     }
   }
+  // destroy(){
+  //   this.destroyed = true;
+  //   this.root.removeChild(this.domElement);
+  // }
 }
