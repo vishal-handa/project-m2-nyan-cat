@@ -47,6 +47,7 @@ class Enemy {
     this.domElement.style.left = `${this.x}px`;
     this.domElement.style.top = `${this.y}px`;
     this.domElement.style.height="100px";
+    this.domElement.style.marginTop="20px";
     this.domElement.style.width="100px";
     this.domElement.style.zIndex = 5;
 

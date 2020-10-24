@@ -51,13 +51,14 @@ class Engine {
     });
     function gameover(){
       let gameOver=document.getElementById("gameover");
+      let bg=document.getElementById("app");
       gameOver.style.display="block";
       gameOver.style.position="absolute";
       gameOver.style.height=GAME_HEIGHT;
       gameOver.style.top="10px";
       gameOver.style.zIndex=900;
       gameOver.style.width=GAME_WIDTH;
-
+      gameOver.style.backgroundColor="black";
       let replay=document.getElementById('replay');
       replay.addEventListener('click', playAgain);
     }
@@ -96,7 +97,7 @@ class Engine {
   // the burger never dies. In your exercises you will fix this method.
   isPlayerDead = () => {
     const enemy = this.enemies.find((enemy)=>{
-      return this.player.x===enemy.x && (enemy.y +ENEMY_HEIGHT>= this.player.y)
+      return this.player.x===enemy.x && (enemy.y + PLAYER_HEIGHT>= this.player.y)
     });
     if(enemy){
       if(enemy.name === 'cat'){
