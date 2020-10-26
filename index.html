@@ -1,12 +1,47 @@
 <html>
   <head>
     <title>Nyan Kat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+      body{
+        background-color: #180d11;
+      }
+      #startGame{
+        font-family: 'Dancing Script', cursive;
+        font-size: 2em;
+        position:absolute;
+        padding:15px;
+        border-radius: 40px;
+        background-color: none;
+        color: gold;
+        top:30%;
+        left:30%;
+        border: 3px solid gold;
+      }
+      #startGame:hover{
+        cursor: pointer;
+      }
+      
+      #initialImage{
+        position:absolute;
+        top:8px;
+        left:8px;
+      }
+      .afterStart{
+        display:none;
+      }
+    </style>
   </head>
-  <body style="overflow: hidden">
+  <body style="overflow: hidden" >
+    <div id="mainSection">
     <div id="app"></div>
-    <img src="images/replay.png" id="replay">
+    <img src="images/starrynight.gif" id="initialImage">
+    <!-- <img src="images/replay.png" id="replay"> -->
     <img src="images/gameover.jpg" id="gameover" style="display:none">
     <img src="images/over.gif" style="display:none">
+    <p id="startGame">Start playing!</p>
+    <p id="score"></p>
+  </div>
     <script src="js/data.js"></script>
     <script src="js/kittyhaus.js"></script>
     <script src="js/Enemy.js"></script>

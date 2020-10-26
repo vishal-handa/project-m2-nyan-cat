@@ -19,14 +19,22 @@ class Engine {
     this.life=3;
     //let counter=0;
 
+    this.mainsection=document.getElementById('initialImage');
+    this.mainsection.style.width=`${GAME_WIDTH}px`;
+    this.mainsection.style.height=`${GAME_HEIGHT}px`;
+    this.mainsection.style.zIndex=11;
+    this.startGame=document.getElementById('startGame');
+    this.startGame.style.zIndex=11;
+    this.startGame.addEventListener('click', startIt);
   }
   
-
   // The gameLoop will run every few milliseconds. It does several things
   //  - Updates the enemy positions
   //  - Detects a collision between the player and any enemy
   //  - Removes enemies that are too low from the enemies array
   gameLoop = () => {
+    this.mainsection.setAttribute('class','afterStart');
+    this.startGame.setAttribute('class','afterStart');
     // This code is to see how much time, in milliseconds, has elapsed since the last
     // time this method was called.
     // (new Date).getTime() evaluates to the number of milliseconds since January 1st, 1970 at midnight.
@@ -51,11 +59,10 @@ class Engine {
     });
     function gameover(){
       let gameOver=document.getElementById("gameover");
-      let bg=document.getElementById("app");
       gameOver.style.display="block";
       gameOver.style.position="absolute";
       gameOver.style.height=GAME_HEIGHT;
-      gameOver.style.top="10px";
+      gameOver.style.top="8px";
       gameOver.style.zIndex=900;
       gameOver.style.width=GAME_WIDTH;
       gameOver.style.backgroundColor="black";
@@ -106,6 +113,7 @@ class Engine {
       } else if (enemy.name === 'centaur'){
         this.life -=10;
       }
+
       enemy.update();
       console.log(enemy, this.life);
     }
