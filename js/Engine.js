@@ -20,12 +20,17 @@ class Engine {
     //let counter=0;
 
     this.mainsection=document.getElementById('initialImage');
-    this.mainsection.style.width=`${GAME_WIDTH}px`;
-    this.mainsection.style.height=`${GAME_HEIGHT}px`;
+    this.mainsection.style.width='100vw';
+    this.mainsection.style.height='100vh';
     this.mainsection.style.zIndex=11;
+    this.mainsection.style.margin=0;
     this.startGame=document.getElementById('startGame');
     this.startGame.style.zIndex=11;
     this.startGame.addEventListener('click', startIt);
+    this.intro = new Audio('musics/Intro.mp3');
+    this.gameplay=new Audio('musics/Play.mp3');
+    this.over=new Audio('musics/Over.mp3');
+    this.intro.play();
   }
   
   // The gameLoop will run every few milliseconds. It does several things
@@ -33,6 +38,8 @@ class Engine {
   //  - Detects a collision between the player and any enemy
   //  - Removes enemies that are too low from the enemies array
   gameLoop = () => {
+    this.intro.pause();
+    this.gameplay.play();
     this.mainsection.setAttribute('class','afterStart');
     this.startGame.setAttribute('class','afterStart');
     // This code is to see how much time, in milliseconds, has elapsed since the last
@@ -61,10 +68,11 @@ class Engine {
       let gameOver=document.getElementById("gameover");
       gameOver.style.display="block";
       gameOver.style.position="absolute";
-      gameOver.style.height=GAME_HEIGHT;
-      gameOver.style.top="8px";
+      gameOver.style.height='100vh';
+      gameOver.style.margin=0;
+      gameOver.style.top="0px";
       gameOver.style.zIndex=900;
-      gameOver.style.width=GAME_WIDTH;
+      gameOver.style.width='100vw';
       gameOver.style.backgroundColor="black";
       let replay=document.getElementById('replay');
       replay.addEventListener('click', playAgain);
@@ -91,6 +99,8 @@ class Engine {
     // We check if the player is dead. If he is, we alert the user
     // and return from the method (Why is the return statement important?)
     if (this.isPlayerDead() && this.life <= 0) {
+      this.gameplay.pause();
+      this.over.play();
       gameover();
       return;
       //gameOver.style.display=block;

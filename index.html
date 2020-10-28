@@ -3,8 +3,9 @@
     <title>Nyan Kat</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
-      body{
+      html, body{
         background-color: #180d11;
+        margin:0;
       }
       #startGame{
         font-family: 'Dancing Script', cursive;
@@ -24,8 +25,8 @@
       
       #initialImage{
         position:absolute;
-        top:8px;
-        left:8px;
+        top:0px;
+        left:0px;
       }
       .afterStart{
         display:none;
@@ -36,7 +37,7 @@
     <div id="mainSection">
     <div id="app"></div>
     <img src="images/starrynight.gif" id="initialImage">
-    <!-- <img src="images/replay.png" id="replay"> -->
+    <img src="images/replay.png" id="replay">
     <img src="images/gameover.jpg" id="gameover" style="display:none">
     <img src="images/over.gif" style="display:none">
     <p id="startGame">Start playing!</p>
