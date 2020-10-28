@@ -22,7 +22,7 @@
       #startGame:hover{
         cursor: pointer;
       }
-      
+
       #initialImage{
         position:absolute;
         top:0px;
@@ -30,6 +30,18 @@
       }
       .afterStart{
         display:none;
+      }
+      #score{
+        position:absolute;
+        display:block;
+        top:0px;
+        right:20px;
+        z-index:700;
+        font-family:'Dancing Script', cursive;
+        font-size:3em;
+        font-weight: 900;
+        color: #FFFFFF;
+        text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
       }
     </style>
   </head>
@@ -39,12 +51,12 @@
     <img src="images/starrynight.gif" id="initialImage">
     <img src="images/replay.png" id="replay">
     <img src="images/gameover.jpg" id="gameover" style="display:none">
-    <img src="images/over.gif" style="display:none">
     <p id="startGame">Start playing!</p>
     <p id="score"></p>
   </div>
     <script src="js/data.js"></script>
     <script src="js/kittyhaus.js"></script>
+    <script src="js/lives.js"></script>
     <script src="js/Enemy.js"></script>
     <script src="js/engine-utilities.js"></script>
     <script src="js/Engine.js"></script>

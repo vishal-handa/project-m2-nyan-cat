@@ -17,15 +17,16 @@ class Engine {
     // We add the background image to the game
     addBackground(this.root);
     this.life=3;
+    lives(this.life);
     //let counter=0;
 
     this.mainsection=document.getElementById('initialImage');
     this.mainsection.style.width='100vw';
     this.mainsection.style.height='100vh';
-    this.mainsection.style.zIndex=11;
+    this.mainsection.style.zIndex=750;
     this.mainsection.style.margin=0;
     this.startGame=document.getElementById('startGame');
-    this.startGame.style.zIndex=11;
+    this.startGame.style.zIndex=750;
     this.startGame.addEventListener('click', startIt);
     this.intro = new Audio('musics/Intro.mp3');
     this.gameplay=new Audio('musics/Play.mp3');
@@ -119,13 +120,15 @@ class Engine {
     if(enemy){
       if(enemy.name === 'cat'){
         this.life++;
+        lives(this.life);
         console.log(this.life);
       } else if (enemy.name === 'centaur'){
         this.life -=10;
+        lives(this.life);
       }
 
       enemy.update();
-      console.log(enemy, this.life);
+      //console.log(enemy, this.life);
     }
     return enemy;
   };
