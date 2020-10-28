@@ -71,5 +71,10 @@ const addBackground = (root) => {
 };
 
 function playAgain(){
-  window.location.reload();
+  let gameOver=document.getElementById("gameover");
+  gameOver.style.display="none";
+  let replay=document.getElementById('replay');
+  replay.style.display='none';
+  //window.location.reload();
+  gameEngine.gameLoop();
 }

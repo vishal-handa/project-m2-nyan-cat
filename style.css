@@ -9,10 +9,11 @@ html, body{
     padding:15px;
     border-radius: 40px;
     background-color: none;
-    color: gold;
+    color: #d2bb76;
     top:30%;
     left:30%;
-    border: 3px solid gold;
+    border: 3px solid #d2bb76;
+    z-index: 750;
 }
 #startGame:hover{
     cursor: pointer;
@@ -22,9 +23,26 @@ html, body{
     position:absolute;
     top:0px;
     left:0px;
+    width:100vw;
+    height:100vh;
+    z-index: 746;
+    margin:0;
 }
-.afterStart{
+
+#gameover{
+    position: absolute;
+    height:100vh;
+    margin:0;
+    top:0px;
+    z-index: 900;
+    width: 100vw;
+    background-color: black;
+}
+.disappear{
     display:none;
+}
+.appear{
+    display:block;
 }
 #score{
     position:absolute;
@@ -37,4 +55,99 @@ html, body{
     font-weight: 900;
     color: #FFFFFF;
     text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+}
+
+#text{
+    position:absolute;
+    top:0px;
+    left:0px;
+    height: 100vh;
+    width: 100vw;
+    z-index: 748;
+}
+
+.entry{
+    animation-name: slideIn;
+    animation-duration:  1.5s;
+    animation-timing-function:  ease-in;
+}
+@keyframes slideIn {
+    from {
+    transform: translateX(50%);
+    opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.exit{
+    animation-name: slideOut;
+    animation-duration:  1.5s;
+    animation-timing-function:  ease-out;
+}
+@keyframes slideOut {
+    from {
+    transform: translateX(0);
+    opacity: 1;
+    }
+    to {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+}
+
+#mainTitle{
+    position: absolute;
+    top:25%;
+    left:18%;
+    font-family: 'Elsie Swash Caps', cursive;
+    color: #d2bb76;
+    font-size: 5em;
+    z-index:749;
+    font-weight: bolder;
+}
+
+#next{
+    position:absolute;
+    top:65%;
+    right:3%;
+    font-family:'Elsie Swash Caps', cursive;
+    color: #d2bb76;
+    font-size: 20px;
+    font-weight: bolder;
+    z-index: 749;
+    padding:5px;
+    border-radius: 50px;
+    background-color: none;
+    border:2px solid #d2bb76;
+}
+#next:hover{
+    cursor: pointer;
+}
+
+#rules{
+    position:absolute;
+    top:20%;
+    left:20%;
+    font-family:'Elsie Swash Caps', cursive;
+    color: #d2bb76;
+    font-size: 20px;
+    font-weight: bolder;
+    z-index: 749;
+}
+
+#replay{
+    font-family: 'Dancing Script', cursive;
+    font-size: 6em;
+    position:absolute;
+    background-color: none;
+    color: #d2bb76;
+    top:20%;
+    left:35%;
+    z-index: 901;
+}
+#replay:hover{
+    cursor: pointer;
 }

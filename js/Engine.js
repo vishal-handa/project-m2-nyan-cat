@@ -18,20 +18,41 @@ class Engine {
     addBackground(this.root);
     this.life=3;
     lives(this.life);
-    //let counter=0;
-
+    //setting the main image
     this.mainsection=document.getElementById('initialImage');
-    this.mainsection.style.width='100vw';
-    this.mainsection.style.height='100vh';
-    this.mainsection.style.zIndex=750;
-    this.mainsection.style.margin=0;
+
+    //intro text and next button
+    this.titleText=document.getElementById('mainTitle');
+    this.titleText.setAttribute('class', 'entry');
+
+    this.nextButton=document.getElementById('next');
+    this.nextButton.setAttribute('class','entry');
+    this.nextButton.addEventListener('click', this.nextpage);
+    
+    //start game button
     this.startGame=document.getElementById('startGame');
-    this.startGame.style.zIndex=750;
-    this.startGame.addEventListener('click', startIt);
     this.intro = new Audio('musics/Intro.mp3');
     this.gameplay=new Audio('musics/Play.mp3');
     this.over=new Audio('musics/Over.mp3');
     this.intro.play();
+    this.introtext=document.getElementById('text');
+    this.rules=document.getElementById('rules');
+  }
+
+  nextpage=()=>{
+    this.titleText.removeAttribute('class','entry');
+    this.titleText.setAttribute('class','exit');
+    this.nextButton.removeAttribute('class','entry');
+    this.nextButton.setAttribute('class','exit');
+
+    this.titleText.setAttribute('class','disappear');
+    this.nextButton.setAttribute('class','disappear');
+  
+    this.rules.setAttribute('class','entry');
+    this.rules.style.display='block';
+    this.startGame.setAttribute('class','entry');
+    this.startGame.style.display="block";
+    this.startGame.addEventListener('click', startIt);
   }
   
   // The gameLoop will run every few milliseconds. It does several things
@@ -41,8 +62,12 @@ class Engine {
   gameLoop = () => {
     this.intro.pause();
     this.gameplay.play();
-    this.mainsection.setAttribute('class','afterStart');
-    this.startGame.setAttribute('class','afterStart');
+    this.over.pause();
+    this.over.currentTime=0;
+    this.mainsection.style.display="none";
+    this.startGame.style.display="none";
+    this.introtext.style.display="none";
+    this.rules.style.display='none';
     // This code is to see how much time, in milliseconds, has elapsed since the last
     // time this method was called.
     // (new Date).getTime() evaluates to the number of milliseconds since January 1st, 1970 at midnight.
@@ -68,14 +93,8 @@ class Engine {
     function gameover(){
       let gameOver=document.getElementById("gameover");
       gameOver.style.display="block";
-      gameOver.style.position="absolute";
-      gameOver.style.height='100vh';
-      gameOver.style.margin=0;
-      gameOver.style.top="0px";
-      gameOver.style.zIndex=900;
-      gameOver.style.width='100vw';
-      gameOver.style.backgroundColor="black";
       let replay=document.getElementById('replay');
+      replay.style.display='block';
       replay.addEventListener('click', playAgain);
     }
     
@@ -91,7 +110,6 @@ class Engine {
       let source=drops.src;
       this.enemies.push(new Enemy(this.root, spot, name, source));
       //console.log(this.enemies);
-      
     }
 
     //set the name property
@@ -101,7 +119,10 @@ class Engine {
     // and return from the method (Why is the return statement important?)
     if (this.isPlayerDead() && this.life <= 0) {
       this.gameplay.pause();
+      this.gameplay.currentTime=0;
       this.over.play();
+      this.life=lifeReset();
+      lives(this.life);
       gameover();
       return;
       //gameOver.style.display=block;
@@ -126,7 +147,6 @@ class Engine {
         this.life -=10;
         lives(this.life);
       }
-
       enemy.update();
       //console.log(enemy, this.life);
     }
