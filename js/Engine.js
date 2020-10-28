@@ -44,10 +44,8 @@ class Engine {
     this.titleText.setAttribute('class','exit');
     this.nextButton.removeAttribute('class','entry');
     this.nextButton.setAttribute('class','exit');
-
     this.titleText.setAttribute('class','disappear');
     this.nextButton.setAttribute('class','disappear');
-  
     this.rules.setAttribute('class','entry');
     this.rules.style.display='block';
     this.startGame.setAttribute('class','entry');
@@ -76,7 +74,6 @@ class Engine {
     }
 
     let timeDiff = new Date().getTime() - this.lastFrame;
-
     this.lastFrame = new Date().getTime();
     // We use the number of milliseconds since the last call to gameLoop to update the enemy positions.
     // Furthermore, if any enemy is below the bottom of our game, its destroyed property will be set. (See Enemy.js)
