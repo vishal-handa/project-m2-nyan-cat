@@ -112,6 +112,7 @@ html, body{
     font-size: 5em;
     z-index:749;
     font-weight: bolder;
+    text-shadow: 0px 0px 10px #d2bb76;
 }
 
 #next{
@@ -123,7 +124,7 @@ html, body{
     font-size: 20px;
     font-weight: bolder;
     z-index: 749;
-    padding:5px;
+    padding:10px;
     border-radius: 50px;
     background-color: none;
     border:2px solid #d2bb76;
@@ -143,7 +144,7 @@ html, body{
     z-index: 749;
     text-align: center;
     padding:20px;
-    text-shadow: 0px 0px 15px #000000;
+    text-shadow: 0px 0px 10px black;
 }
 
 #replay{
@@ -175,6 +176,23 @@ html, body{
     left:25%;
     z-index: 901;
     align-content: center;
+    text-shadow: 0px 0px 10px #d2bb76;
     margin-block-start: 0em;
     margin-block-end: 0em;
+}
+
+.entryZ{
+    animation-name: fadeIn;
+    animation-duration:  1.5s;
+    animation-timing-function:  ease-in;
+}
+@keyframes fadeIn {
+    from {
+    transform: translateZ(100%);
+    opacity: 0;
+    }
+    to {
+        transform: translateZ(0);
+        opacity: 1;
+    }
 }

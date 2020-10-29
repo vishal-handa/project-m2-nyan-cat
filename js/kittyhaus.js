@@ -14,6 +14,10 @@ const kittyhaus=[
     {
         name:"centaur",
         src:"images/centaur.png"
+    },
+    {
+        name:"centaur",
+        src:"images/centaur.png"
     }
 ];
 
