@@ -2,7 +2,7 @@
 
 <p align="center"><img src="./images/screenshot.png"></p>
 
-# Introduction
+<!-- # Introduction
 
 This project was designed as a way for you to practice and learn about Object Oriented Programming. A good bit of code has already been provided for you, and it makes for an _almost_ working game.
 
@@ -83,4 +83,4 @@ Your project is due on XX XXX, XXXX by XX:XX.
 
 ## Useful Links
 
-- https://javascript.info/keyboard-events
+- https://javascript.info/keyboard-events -->
