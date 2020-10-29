@@ -63,11 +63,6 @@ const addBackground = (root) => {
   // whiteBox.style.width = `${GAME_WIDTH}px`;
   // whiteBox.style.background = '#fff';
   // root.append(whiteBox);
-
-  const btn=document.createElement('img');
-  btn.src='images/replay.png';
-  btn.style.display='none';
-  whiteBox.appendChild(btn);
 };
 
 function playAgain(){
@@ -75,6 +70,8 @@ function playAgain(){
   gameOver.style.display="none";
   let replay=document.getElementById('replay');
   replay.style.display='none';
+  let gameovertext=document.getElementById('gameoverText');
+  gameovertext.style.display='none';
   //window.location.reload();
   gameEngine.gameLoop();
 }

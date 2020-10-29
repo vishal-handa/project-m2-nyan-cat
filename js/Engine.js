@@ -105,6 +105,8 @@ class Engine {
       let replay=document.getElementById('replay');
       replay.style.display='block';
       replay.addEventListener('click', playAgain);//playAgain defined in engine-utilities.js
+      let gameovertext=document.getElementById('gameoverText');
+      gameovertext.style.display='block';
     }
     
   
