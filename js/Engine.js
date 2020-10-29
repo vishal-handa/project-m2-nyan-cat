@@ -16,40 +16,48 @@ class Engine {
     this.enemies = [];
     // We add the background image to the game
     addBackground(this.root);
-    this.life=3;
+    this.life=LIFE;
     lives(this.life);
     //setting the main image
     this.mainsection=document.getElementById('initialImage');
 
-    //intro text and next button
+    //intro text and next button animation
     this.titleText=document.getElementById('mainTitle');
     this.titleText.setAttribute('class', 'entry');
-
     this.nextButton=document.getElementById('next');
     this.nextButton.setAttribute('class','entry');
+
+    //link to the rules page
     this.nextButton.addEventListener('click', this.nextpage);
     
     //start game button
     this.startGame=document.getElementById('startGame');
+
+    //add the audio files and play the first intro mp3
     this.intro = new Audio('musics/Intro.mp3');
     this.gameplay=new Audio('musics/Play.mp3');
     this.over=new Audio('musics/Over.mp3');
     this.intro.play();
+    
+    //the rules page
     this.introtext=document.getElementById('text');
     this.rules=document.getElementById('rules');
   }
 
   nextpage=()=>{
+    //animation to remove the intro text
     this.titleText.removeAttribute('class','entry');
-    this.titleText.setAttribute('class','exit');
     this.nextButton.removeAttribute('class','entry');
+    this.titleText.setAttribute('class','exit');
     this.nextButton.setAttribute('class','exit');
-    this.titleText.setAttribute('class','disappear');
-    this.nextButton.setAttribute('class','disappear');
+
+    //animation to the display of rules page
     this.rules.setAttribute('class','entry');
     this.rules.style.display='block';
     this.startGame.setAttribute('class','entry');
     this.startGame.style.display="block";
+
+    // start the game below
     this.startGame.addEventListener('click', startIt);
   }
   
@@ -61,11 +69,15 @@ class Engine {
     this.intro.pause();
     this.gameplay.play();
     this.over.pause();
+    //reset the gameover sound to start from beginning if there are multiple replays.
     this.over.currentTime=0;
+
+    //remove all the intro pics texts and buttons
     this.mainsection.style.display="none";
     this.startGame.style.display="none";
     this.introtext.style.display="none";
     this.rules.style.display='none';
+
     // This code is to see how much time, in milliseconds, has elapsed since the last
     // time this method was called.
     // (new Date).getTime() evaluates to the number of milliseconds since January 1st, 1970 at midnight.
@@ -92,7 +104,7 @@ class Engine {
       gameOver.style.display="block";
       let replay=document.getElementById('replay');
       replay.style.display='block';
-      replay.addEventListener('click', playAgain);
+      replay.addEventListener('click', playAgain);//playAgain defined in engine-utilities.js
     }
     
   
@@ -101,10 +113,13 @@ class Engine {
       // We find the next available spot and, using this spot, we create an enemy.
       // We add this enemy to the enemies array
       const spot = nextEnemySpot(this.enemies);
+      //randompick of the animal from kittyhaus.
       let drops=kittyhaus[Math.floor(Math.random() * kittyhaus.length)];
       //console.log(drops.name);
       let name=drops.name;
       let source=drops.src;
+
+      // instance of the Enemy.js in enemies. Here it picks the name of the object and other properties
       this.enemies.push(new Enemy(this.root, spot, name, source));
       //console.log(this.enemies);
     }
@@ -118,7 +133,7 @@ class Engine {
       this.gameplay.pause();
       this.gameplay.currentTime=0;
       this.over.play();
-      this.life=lifeReset();
+      this.life=LIFE;
       lives(this.life);
       gameover();
       return;
