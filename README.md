@@ -21,7 +21,8 @@ Following is the picture of the game play.
     1) The main background was changed to a different background, and the size of the game was changed to full browser view.
     2) The concept of the game was changed to include two different set of objects falling from the top. The circular china adds +1 life when caught, while the centaur removes the life by 10 when hit.
     3) For the different objects, a `kittyhaus.js` file was created that housed different animals with particular identifiers.
-    4)The maximum objects falling at any given moment are 5.
+
+    4)The maximum objects falling at any given moment are 6.
     5) This page also has it own specific music.
     6) A check was added to the score/life (the default is 3), i.e. whenever it becomes zero, the game would be over. 
 - On the game over page, an image is displayed with black background, a game over text, and a replay button.
