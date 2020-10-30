@@ -14,7 +14,7 @@ Following is the picture of the game play.
 
 
 ## Changes made
-- An introduction page was made with the title and a "next=>" button.
+- An introduction page was made with the title, a "Next=>" button, and two different overlapping images.
 - A second page was designed that describe a set of rules and the "Start Playing" button. 
 - The introduction page and the rules page have a particular music playing in the background.
 - Changes in the gameplay are described below.
@@ -22,3 +22,7 @@ Following is the picture of the game play.
     2) The concept of the game was changed to include two different set of objects falling from the top. The circular china adds +1 life when caught, while the centaur removes the life by 10 when hit.
     4) For the different objects, a `kittyhaus.js` file was created that housed different animals with particular identifiers.
     3) This page also has it own specific music.
+    4) A check was added to the score/life (the default is 3), i.e. whenever it becomes zero, the game would be over. 
+- On the game over page, an image is displayed with black background, a game over text, and a replay button.
+- This part also has its own specific audio.
+- Clicking on the replay button takes one to the gameplay again, and the life is reset to 3.
