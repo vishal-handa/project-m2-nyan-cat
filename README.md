@@ -35,6 +35,6 @@ Following is the picture of the gameplay.
 
 ## Netlify link
 
-https://squeakycentaurs.netlify.app
+<!-- https://squeakycentaurs.netlify.app -->
 
 So put your headphones on with volume at full....and play on!
