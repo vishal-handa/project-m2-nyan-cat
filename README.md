@@ -36,3 +36,5 @@ Following is the picture of the game play.
 ## Netlify link
 
 https://pedantic-hopper-3fc9bf.netlify.app
+
+So put your headphones on with volume at full....and play on!
