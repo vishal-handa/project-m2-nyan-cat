@@ -4,7 +4,7 @@ html, body{
 }
 #startGame{
     position:absolute;
-    top:69%;
+    top:64%;
     right:1%;
     font-family:'Dancing Script', cursive;
     color: #d2bb76;
@@ -52,8 +52,8 @@ html, body{
 #text{
     background-image: url("images/starrynight.gif");
     position: absolute;
-    height: 570px;
-    width: 1276px;
+    height: 500px;
+    width: 1200px;
     z-index: 748;
 }
 
@@ -106,8 +106,8 @@ html, body{
 
 #next{
     position:absolute;
-    top:65%;
-    right:3%;
+    top:62%;
+    right:2%;
     font-family:'Dancing Script', cursive;
     color: #d2bb76;
     font-size: 20px;
@@ -124,7 +124,7 @@ html, body{
 
 #rules{
     position:absolute;
-    top:32%;
+    top:25%;
     left:0;
     font-family:'Elsie Swash Caps', cursive;
     color: #d2bb76;
