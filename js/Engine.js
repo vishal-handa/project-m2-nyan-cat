@@ -167,7 +167,7 @@ class Engine {
       enemy.update();
       //console.log(enemy, this.life);
     }
-    return enemy;
+    //return enemy;
   };
 
   

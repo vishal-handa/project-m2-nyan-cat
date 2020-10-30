@@ -19,7 +19,7 @@ class Player {
     this.domElement.src = 'images/umbridge.png';
     this.domElement.style.position = 'absolute';
     this.domElement.style.left = `${this.x}px`;
-    this.domElement.style.top = ` ${this.y}px`;
+    this.domElement.style.bottom = "10px";
     this.domElement.style.width="100px";
     this.domElement.style.height="120px";
     this.domElement.style.zIndex = '10';
