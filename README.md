@@ -14,11 +14,11 @@ Following is the picture of the game play.
 
 
 ## Changes made
--An introduction page was made with the title and a "next=>" button.
--A second page was designed that describe a set of rules and the "Start Playing" button. 
--The introduction page and the rules page have a particular music playing in the background.
--Changes in the gameplay are described below.
-  1) The main background was changed to a different background, and the size of the game was changed to full browser view.
-  2) The concept of the game was changed to include two different set of objects falling from the top. The circular china adds +1 life when caught, while the centaur removes the life by 10 when hit.
-  4) For the different objects, a `kittyhaus.js` file was created that housed different animals with particular identifiers.
-  3) This page also has it own specific music.
+- An introduction page was made with the title and a "next=>" button.
+- A second page was designed that describe a set of rules and the "Start Playing" button. 
+- The introduction page and the rules page have a particular music playing in the background.
+- Changes in the gameplay are described below.
+    1) The main background was changed to a different background, and the size of the game was changed to full browser view.
+    2) The concept of the game was changed to include two different set of objects falling from the top. The circular china adds +1 life when caught, while the centaur removes the life by 10 when hit.
+    4) For the different objects, a `kittyhaus.js` file was created that housed different animals with particular identifiers.
+    3) This page also has it own specific music.
