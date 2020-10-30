@@ -21,23 +21,20 @@ html, body{
     cursor: pointer;
 }
 
-#initialImage{
-    position:absolute;
-    top:0px;
-    left:0px;
-    width:100vw;
-    height:100vh;
+/* #initialImage{
+    width:1200px;
+    height:500px;
     z-index: 746;
     margin:0;
-}
+} */
 
 #gameover{
     position: absolute;
-    height:100vh;
+    height:500px;
     margin:0;
-    top:0px;
+    /* top:0px; */
     z-index: 900;
-    width: 100vw;
+    width: 1200px;
     background-color: black;
 }
 .disappear{
@@ -60,11 +57,10 @@ html, body{
 }
 
 #text{
-    position:absolute;
-    top:0px;
-    left:0px;
-    height: 100vh;
-    width: 100vw;
+    background-image: url("images/starrynight.gif");
+    position: absolute;
+    height: 500px;
+    width: 1200px;
     z-index: 748;
 }
 
@@ -139,7 +135,7 @@ html, body{
     left:0;
     font-family:'Elsie Swash Caps', cursive;
     color: #d2bb76;
-    font-size: 19px;
+    font-size: 12px;
     font-weight: bolder;
     z-index: 749;
     text-align: center;
@@ -197,7 +193,7 @@ html, body{
     }
 }
 
-/* #mainSection{
+#mainSection{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -206,5 +202,7 @@ html, body{
 }
 
 #app{
-    padding:40px;
-} */
+    position: relative;
+    display: block;
+    overflow: hidden;
+}

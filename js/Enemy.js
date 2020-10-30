@@ -52,7 +52,9 @@ class Enemy {
     this.domElement.style.boxShadow='box-shadow: 0px 0px 7px 5px rgba(255,250,68,0.75)';
 
     // Show that the user can actually see the img DOM node, we append it to the root DOM node.
-    theRoot.appendChild(this.domElement);
+    // theRoot.appendChild(this.domElement);
+    let meh=document.getElementById('app');
+    meh.appendChild(this.domElement);
     this.speed = Math.random() / 2 + 0.25;
   }
 

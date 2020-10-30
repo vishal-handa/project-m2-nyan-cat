@@ -19,7 +19,7 @@ class Engine {
     this.life=LIFE;
     lives(this.life);
     //setting the main image
-    this.mainsection=document.getElementById('initialImage');
+    // this.mainsection=document.getElementById('initialImage');
 
     //intro text and next button animation
     this.titleText=document.getElementById('mainTitle');
@@ -73,7 +73,7 @@ class Engine {
     this.over.currentTime=0;
 
     //remove all the intro pics texts and buttons
-    this.mainsection.style.display="none";
+    // this.mainsection.style.display="none";
     this.startGame.style.display="none";
     this.introtext.style.display="none";
     this.rules.style.display='none';
@@ -167,7 +167,7 @@ class Engine {
       enemy.update();
       //console.log(enemy, this.life);
     }
-    //return enemy;
+    return enemy;
   };
 
   

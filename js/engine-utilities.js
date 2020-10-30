@@ -44,8 +44,8 @@ const addBackground = (root) => {
 
   // We set its src attribute and the height and width CSS attributes
   bg.src = 'images/office.jpg';
-  bg.style.height = '100%';
-  bg.style.width = '100vw';
+  bg.style.height = GAME_HEIGHT;
+  bg.style.width = GAME_WIDTH;
 
   // We add it to the root DOM node
   root.append(bg);
@@ -75,3 +75,5 @@ function playAgain(){
   //window.location.reload();
   gameEngine.gameLoop();
 }
+
+
